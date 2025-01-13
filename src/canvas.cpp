@@ -1342,7 +1342,7 @@ void kCanvas::Text(const kRect &rect, const char *text, int count, const kFont &
                 // can't fit in bounds (so ellipses should be painted)
                 kScalar nextrowbottom =
                     cp.y + y + fm.height * 2 + fm.linegap + properties->interval;
-                lasttextline = nextrowbottom > rect.bottom;
+                lasttextline = sz > cw && nextrowbottom > rect.bottom;
             }
 
             // output line words one by one
